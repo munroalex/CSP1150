@@ -1,0 +1,86 @@
+=================================
+|             Main              |
+=================================
+
+'print_heading' function to 'welcome' user to the dice roller program
+set 'exit' value to False
+set 'total roll' counter to 0
+set 'total exploded' counter to 0
+
+while exit is False 
+    prompt user for a roll input with instructions 'x' for exit and 'h' for help
+    if user input is 'h'
+        'print_heading' function to show the 'help' page
+        display formatted instructions on how to use script
+    
+    otherwise if user input is 'x'
+        'print_heading' function to show the 'total statistics' page
+        display formatted total session statistics
+        'print_heading' function to say 'goodbye'
+        set exit value to True
+
+    otherwise if user input contains 'd'
+        split user input on value 'd', assign to dice roll variable
+        if 'dice roll' variable contains 2 items
+            attempt to convert 'dice roll' item 1 to an integer 'quantity'
+            if attempt fails display invalid roll text to user and return to while loop
+            if 'dice roll' item 2 ends with '!'
+                set 'exploding dice' to True
+                attempt to convert 'dice roll' item 2 minus ! to an integer 'sides'
+                if attempt fails display invalid roll text to user and return to while loop
+            otherwise set 'exploding dice' to False and attempt to convert 'dice roll' item 2 to an integer
+                if attempt fails display invalid roll text to user and return to while loop
+    
+        otherwise display invalid roll text to user and return to while loop
+
+        set 'roll list' to an empty list
+        set 'explosion number list' to an empty list
+        set 'roll number' to 0
+        set 'explosion number' to 0
+
+        repeat for 'quantity'
+            add 1 to 'total roll' counter
+            set 'exploding list' to an empty list
+            set 'individual roll' to a random number between 1 and 'sides'
+            insert 'individual roll' into 'roll list'
+            display info about current roll to user, including the roll number and the value of 'individual roll'
+            if 'exploding dice' is True
+                if 'individual roll' is equal to 'sides'
+                    add 1 to 'total exploded' counter
+                    set 'exploding' to True
+                    insert 'individual roll' into 'exploding list'
+                    set 'single dice explosion' to 0
+                    while 'exploding' is True
+                        add 1 to 'single dice explosion'
+                        add 1 to 'explosion number'
+                        set 'explosion roll' to a random number between 1 and 'sides'
+                        insert 'explosion roll' into 'exploding list'
+                        insert 'explosion roll' into roll list'
+                        display information about the exploding roll to the user, include current roll and total 
+                        if 'explosion roll' does not equal 'sides'
+                            insert 'single dice explosion' into 'explosion number list'
+                            set 'exploding' to False
+            add 1 to 'roll number'
+        'print_heading' function to display session statistics
+        display all rolls
+        display total of all rolls
+        display average of all rolls
+        display lowest roll and number of times it was rolled
+        display highest roll and number of times it was rolled
+        if 'exploding dice' is True
+            display number of exploded rolls
+            display most explosions from a single roll
+    
+    otherwise display invalid roll text to user and return to while loop 
+        
+
+
+=================================
+|            Appendix           |
+=================================
+
+define 'print_heading' function accepting desired display words as argument
+    display row of '=' equal to the length of desired display words plus 20
+    display desired display words centered between 2 '|'
+    display row of '=' equal to the length of desired display words plus 20
+
