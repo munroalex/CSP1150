@@ -3,12 +3,12 @@
 =================================
 
 'print_heading' function to 'welcome' user to the dice roller program
-set 'exit' value to False
+set 'quit' value to False
 set 'total roll' counter to 0
 set 'total exploded' counter to 0
 
-while exit is False 
-    prompt user for a roll input with instructions 'x' for exit and 'h' for help
+while quit is False 
+    prompt user for a roll input with instructions 'x' for quit and 'h' for help
     if user input is 'h'
         'print_heading' function to show the 'help' page
         display formatted instructions on how to use script
@@ -17,7 +17,7 @@ while exit is False
         'print_heading' function to show the 'total statistics' page
         display formatted total session statistics
         'print_heading' function to say 'goodbye'
-        set exit value to True
+        set quit value to True
 
     otherwise if user input contains 'd'
         split user input on value 'd', assign to dice roll variable
