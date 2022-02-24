@@ -3,7 +3,6 @@
 
 #Import libraries required for script to function
 import random
-import statistics
 
 #print_heading function to display a heading specified surrounded by a border
 #Heading will always be centred
