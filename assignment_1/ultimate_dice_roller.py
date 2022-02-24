@@ -13,10 +13,6 @@ def print_heading(current_heading):
     print(f'|{heading}|')
     print('=' * (len(current_heading) + 20))
 
-#invalid_roll function to save typing the whole print statement multiple times
-def invalid_roll():
-    print('Invalid roll, please enter "h" for help.')
-
 #display welcome heading to user
 print_heading('Welcome to dice roller ultimate edition!')
 
@@ -49,7 +45,7 @@ while quit == False:
             try:
                 quantity = int(dice_roll[0])
             except:
-                invalid_roll()
+                print('Please enter a valid integer for [quantity]')
                 continue
             #check to see if the user has chosen exploding dice, if so set exploding_dice to True and attempt to convert the value minus ! to an integer, if this fails prompt the user it was an invalid roll and restart loop
             if dice_roll[1].endswith('!'):
@@ -58,7 +54,7 @@ while quit == False:
                 try:
                     sides = int(dice_roll[1][:-1])
                 except:
-                    invalid_roll()
+                    print('Please enter a valid integer for [sides]')
                     continue
             #if no ! at the end of the second value, set exploding_dice to false and attempt to convert the value to an integer, if this fails prompt the user it was an invalid roll and restart loop
             else:
@@ -66,11 +62,11 @@ while quit == False:
                 try:
                     sides = int(dice_roll[1])
                 except:
-                    invalid_roll()
+                    print('Please enter a valid integer for [sides]')
                     continue
             
         else:
-            invalid_roll()
+            print('Please enter a valid integer for both [quantity] and [sides]')
             continue
         
         #initiate variables for rolling sessioncounting rolls, explosions and storing values of each
@@ -127,7 +123,7 @@ while quit == False:
 
 
     else:
-        invalid_roll() 
+        print('Please enter a valid roll. Use "h" for help.') 
         continue   
 
 
