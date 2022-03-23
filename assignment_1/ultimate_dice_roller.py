@@ -71,7 +71,7 @@ while quit == False:
         #initiate variables for rolling sessioncounting rolls, explosions and storing values of each
         roll_list = []
         explosion_number_list = []
-        roll_number = 0
+        roll_number = 1
         explosion_number = 0
         
         #roll dice
